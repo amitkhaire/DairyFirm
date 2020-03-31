@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>customer Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>customer List</h1>
+    <a href="/new">Create New customer</a>
+    <br/><br/>
+    <table border="1" cellpadding="2">
+        <thead>
+            <tr>
+                <th>Cutomer ID</th>
+                <th>fristName</th>
+                <th>lastName</th>
+                <th>mobileNumber</th>
+                <th>permanentAddress</th>
+                <th>email</th>
+                <th>adharard</th>
+                <th>pancard</th>
+                <th>milkType</th>
+                <th>regDate</th>
+                <th>updatedDate</th>
+                <th>depositeAmount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="customer : ${listcustomers}">
+                <td th:text="${customer.custId}"></td>
+                <td th:text="${customer.fristName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.mobileNumber}"></td>
+                <td th:text="${customer.permanentAddress}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.adharard}"></td>
+                <td th:text="${customer.pancard}"></td>
+                <td th:text="${customer.milkType}"></td>
+                <td th:text="${customer.regDate}"></td>
+                <td th:text="${customer.updatedDate}"></td>
+                <td th:text="${customer.depositeAmount}"></td>
+                 <td>
+                    <a th:href="@{'/edit/' + ${customer.custId}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/delete/' + ${customer.custId}}">Delete</a>
+                </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>

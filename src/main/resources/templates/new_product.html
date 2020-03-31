@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Product</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Customer Registration</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${customerEntity}"
+            method="post">
+ 
+            <table border="1" cellpadding="10">
+                <tr>
+                    <td>Customer Name:</td>
+                    <td><input type="text" th:field="*{fristName}" /></td>
+                </tr>
+                <tr>
+                    <td>lastName:</td>
+                    <td><input type="text" th:field="*{lastName}" /></td>
+                </tr>
+                <tr>
+                    <td>mobileNumber:</td>
+                    <td><input type="text" th:field="*{mobileNumber}" /></td>
+                </tr>
+				<tr>
+					<td>permanentAddress:</td>
+					<td><input type="text" th:field="*{permanentAddress}" /></td>
+				</tr>
+				<tr>
+                    <td>email:</td>
+                    <td><input type="text" th:field="*{email}" /></td>
+                </tr>
+                <tr>
+                    <td>adharard:</td>
+                    <td><input type="text" th:field="*{adharard}" /></td>
+                </tr>
+                <tr>
+                    <td>pancard:</td>
+                    <td><input type="text" th:field="*{pancard}" /></td>
+                </tr>
+                <tr>
+                    <td>milkType:</td>
+                    <td><input type="text" th:field="*{milkType}" /></td>
+                </tr>
+                 <tr>
+                    <td>regDate:</td>
+                    <td><input type="text" th:field="*{regDate}" /></td>
+                </tr>
+                <tr>
+                    <td>updatedDate:</td>
+                    <td><input type="text" th:field="*{updatedDate}" /></td>
+                </tr>
+                <tr>
+                    <td>depositeAmount:</td>
+                    <td><input type="text" th:field="*{depositeAmount}" /></td>
+                </tr>
+                                         
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
